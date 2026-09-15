@@ -5,6 +5,7 @@ This activity extends the TFA1 POS application by replacing static PHP arrays wi
 ## Links
 
 - GitHub repository: [https://github.com/bonkval/TFA2](https://github.com/bonkval/TFA2)
+- Hosted application: [https://tfa2.page.gd/](https://tfa2.page.gd/)
 - Local application: [http://localhost:8080](http://localhost:8080)
 
 ## Requirements
@@ -26,6 +27,17 @@ This activity extends the TFA1 POS application by replacing static PHP arrays wi
 7. Visit `http://localhost:8080`.
 
 To rebuild the local tables and sample data later, run `php spark migrate:refresh --seed DatabaseSeeder`.
+
+## Deployment
+
+The production URL is `https://tfa2.page.gd/`. Copy `.env.production.example` to `.env` on the host, replace the database placeholders with the hosting provider's MySQL credentials, and keep `CI_ENVIRONMENT` set to `production`. The real `.env` remains excluded from Git so credentials are never committed.
+
+Run the migration and seeder against the production database once during deployment:
+
+```bash
+php spark migrate
+php spark db:seed DatabaseSeeder
+```
 
 ## Implementation
 
