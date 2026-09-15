@@ -1,51 +1,22 @@
-# TFA2 — CodeIgniter POS with MySQL
+# TFA2 — CodeIgniter POS System with MySQL
 
-This activity extends the TFA1 POS application by replacing static PHP arrays with records retrieved from a MySQL database through CodeIgniter models.
-
-## Links
+## Submission Links
 
 - GitHub repository: [https://github.com/bonkval/TFA2](https://github.com/bonkval/TFA2)
 - Hosted application: [https://tfa2.page.gd/](https://tfa2.page.gd/)
-- Local application: [http://localhost:8080](http://localhost:8080)
+- Screenshots: See [`DOCUMENTATION.md`](DOCUMENTATION.md)
 
-## Requirements
+## Completed Requirements
 
-- PHP 8.2 or newer with the `intl`, `mbstring`, and `mysqli` extensions
-- Composer
-- MySQL 8 or MariaDB
-
-## Local setup
-
-1. Install dependencies: `composer install`
-2. Copy `.env.example` to `.env`. Update the MySQL username and password if they differ from the defaults.
-
-   When using XAMPP, make sure `extension=intl` and `extension=mysqli` are enabled in `php.ini`, then restart Apache.
-3. Create the database: `php spark db:create tfa2_pos`
-4. Create the tables: `php spark migrate`
-5. Insert five sample records per table: `php spark db:seed DatabaseSeeder`
-6. Start the server: `php spark serve`
-7. Visit `http://localhost:8080`.
-
-To rebuild the local tables and sample data later, run `php spark migrate:refresh --seed DatabaseSeeder`.
-
-## Deployment
-
-The production URL is `https://tfa2.page.gd/`. Copy `.env.production.example` to `.env` on the host, replace the database placeholders with the hosting provider's MySQL credentials, and keep `CI_ENVIRONMENT` set to `production`. The real `.env` remains excluded from Git so credentials are never committed.
-
-Run the migration and seeder against the production database once during deployment:
-
-```bash
-php spark migrate
-php spark db:seed DatabaseSeeder
-```
-
-## Implementation
-
-- `CustomerModel` wraps the `customers` table.
-- `UserModel` wraps the `users` table.
-- The `Customers` and `Users` controllers call their model's `findAll()` method.
-- Views render retrieved rows using `foreach` and escape output with `esc()`.
-- A reversible migration defines both required tables.
-- `DatabaseSeeder` runs customer and user seeders that add five records per table.
-
-See [DOCUMENTATION.md](DOCUMENTATION.md) for the schema and project structure.
+- CodeIgniter 4 project installed through Composer.
+- Base URL configured in `.env`.
+- Local MySQL database configured.
+- `customers` and `users` tables created through a migration.
+- Both tables populated with five sample records through seeders.
+- `CustomerModel` and `UserModel` created.
+- `Customers` controller retrieves records through `CustomerModel::findAll()`.
+- `Users` controller retrieves records through `UserModel::findAll()`.
+- Customer Accounts page available at `/customers` with full name, email, and phone.
+- User Accounts page available at `/users` with username, full name, and creation date.
+- Customer and user records displayed using `foreach` loops in the views.
+- Navigation links provided between all four pages.
