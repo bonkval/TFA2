@@ -1,6 +1,7 @@
 # TFA2 — Project Documentation
 
 ## Screenshots
+<img width="867" height="212" alt="image" src="https://github.com/user-attachments/assets/879fb55e-6493-4fea-91e4-219e0e4274c0" />
 <img width="1508" height="938" alt="image" src="https://github.com/user-attachments/assets/ac735ba4-324a-4691-b3e6-cb095af7a1af" />
 <img width="1294" height="931" alt="image" src="https://github.com/user-attachments/assets/b961e8d0-a596-4dc8-9284-d335729995ab" />
 <img width="1567" height="938" alt="image" src="https://github.com/user-attachments/assets/53f3898b-2c9d-4ef7-9afc-91fdd69e661f" />
