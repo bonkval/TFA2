@@ -1,5 +1,11 @@
 # TFA2 — Project Documentation
 
+## Screenshots
+<img width="1508" height="938" alt="image" src="https://github.com/user-attachments/assets/ac735ba4-324a-4691-b3e6-cb095af7a1af" />
+<img width="1294" height="931" alt="image" src="https://github.com/user-attachments/assets/b961e8d0-a596-4dc8-9284-d335729995ab" />
+<img width="1567" height="938" alt="image" src="https://github.com/user-attachments/assets/53f3898b-2c9d-4ef7-9afc-91fdd69e661f" />
+<img width="1528" height="930" alt="image" src="https://github.com/user-attachments/assets/813988d1-0603-4ab1-a728-53c55f429278" />
+
 ## Application flow
 
 For `/customers` and `/users`, CodeIgniter routes the request to the corresponding controller. The controller creates its model and uses `findAll()`. The model uses CodeIgniter's Query Builder to retrieve rows from MySQL, and the controller passes those rows to the view.
